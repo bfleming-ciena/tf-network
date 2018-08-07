@@ -30,6 +30,12 @@ variable "route_tables" {
   default     = []
 }
 
+# If no values specified, this defaults to Azure DNS 
+variable "network_security_groups" {
+  description = "Network Security Groups"
+  default     = []
+}
+
 
 # If no values specified, this defaults to Azure DNS 
 variable "dns_servers" {
