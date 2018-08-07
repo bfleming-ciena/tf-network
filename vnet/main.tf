@@ -14,6 +14,7 @@ resource "azurerm_subnet" "mysubnet" {
   resource_group_name       = "${var.resource_group_name}"
   address_prefix            = "${var.subnet_prefixes[count.index]}"
   route_table_id            = "${var.route_tables[count.index]}"
+  network_security_group_id = "${var.network_security_groups[count.index]}" #"" #${azurerm_network_security_group}"
   # network_security_group_id = "${lookup(var.nsg_ids,var.subnet_names[count.index],"")}"
   # network_security_group_id = "${azurerm_network_security_group.ssh.id}"
   count                     = "${length(var.subnet_names)}"
